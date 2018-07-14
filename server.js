@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var app = express();
-var serverUp = false;
+
 
 // This says that if we do root or /, we mean to look in the public folder.
 app.use(express.static('public'));
@@ -23,7 +23,4 @@ app.set('view engine', 'handlebars');
 var routes = require('./controllers/burgers_controller.js');
 app.use('/', routes);
 
-if (serverUp = false) {
-    app.listen(PORT);
-    console.log('App Listening on port: ' + PORT);
-} else {serverUp = false};
+app.listen(PORT);
